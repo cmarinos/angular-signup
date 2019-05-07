@@ -1,0 +1,120 @@
+<div class="profile-wrapper">
+  <form (submit)="updateProfile(profileForm)" #profileForm="ngForm">
+  <div class="profile-header"
+       fxLayout="row"
+       fxLayoutAlign="start"
+       fxLayoutGap="20px"
+       fxLayoutGap.xs="10px">
+    <div fxFlex="100">
+      <mat-toolbar>
+        <p>Profile</p>
+      </mat-toolbar>
+    </div>
+  </div>
+  <div class="profile-content"
+       fxLayout="row"
+       fxLayout.xs="column"
+       fxLayoutAlign="center"
+       fxLayoutGap="20px"
+       fxLayoutGap.xs="10px">
+    <div class="" fxFlex="50">
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Personal Information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <mat-form-field class="form-item">
+            <input matInput name="firstname" #firstnameInput="ngModel" [(ngModel)]="profile.firstname" placeholder="Firstname" required>
+            <mat-error *ngIf="firstnameInput.invalid">
+              Firstname is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="form-item">
+            <input matInput name="lastname" #lastnameInput="ngModel" [(ngModel)]="profile.lastname" placeholder="Lastname" required>
+            <mat-error *ngIf="lastnameInput.invalid">
+              Lastname is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="form-item">
+            <input matInput name="company" #companyInput="ngModel" [(ngModel)]="profile.company" placeholder="Company">
+          </mat-form-field>
+
+          <mat-form-field class="form-item">
+            <input matInput name="phone" #phoneInput="ngModel" [(ngModel)]="profile.phone" placeholder="Phone">
+          </mat-form-field>
+
+          <mat-form-field class="form-item">
+            <input matInput name="mobilePhone" #mobilePhoneInput="ngModel" [(ngModel)]="profile.mobilePhone" placeholder="Mobile Phone">
+          </mat-form-field>
+
+          <mat-slide-toggle class="form-item"
+                            name="newsletter" #newsletterInput="ngModel" [(ngModel)]="profile.newsletter"
+                            color="primary">
+            Subscribe to our newsletters
+          </mat-slide-toggle>
+
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+    <div class="" fxFlex="50">
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Address</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <mat-form-field class="form-item">
+            <input matInput placeholder="Address" name="addressOne" #addressOneInput="ngModel" [(ngModel)]="profile.addressOne">
+          </mat-form-field>
+
+          <mat-form-field class="form-item">
+            <input matInput name="addressTwo" #addressTwoInput="ngModel" [(ngModel)]="profile.addressTwo"
+                   placeholder="Address">
+          </mat-form-field>
+
+          <mat-form-field class="form-item">
+            <input matInput name="city" #cityInput="ngModel" [(ngModel)]="profile.city" placeholder="City">
+          </mat-form-field>
+
+          <mat-form-field class="form-item">
+            <input matInput name="region" #regionInput="ngModel" [(ngModel)]="profile.region" placeholder="State/Province">
+          </mat-form-field>
+
+          <mat-form-field class="form-item">
+            <input matInput name="postcode" #postcodeInput="ngModel" [(ngModel)]="profile.postcode" placeholder="Zip Code">
+          </mat-form-field>
+
+          <mat-form-field class="form-item">
+            <mat-select placeholder="Country" #countryInput="ngModel" [(ngModel)]="profile.country" name="country">
+              <mat-option *ngFor="let c of countries" [value]="c.value">
+                {{c.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+  <div class="profile-footer"
+       fxLayout="row"
+       fxLayoutAlign="end"
+       fxLayoutGap="10px"
+       fxLayoutGap.xs="0">
+    <div fxFlex="100">
+
+      <button type="submit" mat-raised-button color="primary" [disabled]="!profileForm.form.valid">
+        Update Profile
+      </button>
+
+    </div>
+  </div>
+</form>
+</div>

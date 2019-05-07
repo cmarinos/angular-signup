@@ -1,0 +1,57 @@
+<div class="profile-wrapper">
+<form (submit)="saveProfilePhoto()" [formGroup]="form">
+  <div  class="profile-content"
+       fxLayout="row"
+       fxLayout.xs="column"
+       fxLayoutAlign="center"
+       fxLayoutGap="20px"
+       fxLayoutGap.xs="10px">
+    <div class="" fxFlex="100">
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Upload a photo</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div fxFlex="20">
+
+            <table mat-table>
+              <ng-container matColumnDef="button">
+                <td mat-cell>
+                  <button mat-stroked-button type="button" (click)="fileInput.click()">Browse</button>
+                  <input type="file" class="native-file-btn" #fileInput (change)="onImagePicked($event)">
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="preview">
+                <td mat-cell>
+                    <img [src]="profilePhotoPreview" class="profile-photo-preview" *ngIf="profilePhotoPreview && profilePhotoPreview !== '' && form.get('profilePhoto').valid">
+                </td>
+              </ng-container>
+            </table>
+
+          </div>
+          <div class="" fxLayoutAlign="right" fxFlex="80">
+            <div *ngIf="profile && profile.imagePath && profile.imagePath !== ''">
+              <img [src]="profile.imagePath" class="profile-photo">
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+
+  </div>
+  <div class="profile-footer"
+       fxLayout="row"
+       fxLayoutAlign="end"
+       fxLayoutGap="10px"
+       fxLayoutGap.xs="0">
+    <div fxFlex="100">
+      <button type="submit" mat-raised-button color="primary" class="" [disabled]="!form.valid">
+        Save Photo
+      </button>
+    </div>
+  </div>
+</form>
+</div>

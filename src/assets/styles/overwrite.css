@@ -1,0 +1,96 @@
+/**
+* This file should be used only for possible overwrites that might be needed for custom theming.
+* For extra theming to bootstrap scss please add the specific bootstrap functions/attributes to bootstrap/_custom.scss
+*
+*/
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.card-header:first-child {
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    font-size: 23px;
+}
+
+.btn-outline-success:hover {
+    color: #ffffff;
+}
+
+.list-group-item :first-child {
+    margin-right: 0.1rem;
+}
+
+textarea.form-control, textarea.custom-file-control {
+    height: 5rem;
+}
+
+.nav-tabs .nav-link.active {
+    border-color: #3423a6;
+}
+
+.nav-tabs .nav-link, .nav-pills .nav-link {
+    padding: 0.8575em;
+}
+
+.ng-select.ng-select-single .ng-select-container {
+    border: none;
+}
+
+.alert-info {
+    background-color: #f0f3ff;
+    border-color: #f0f3ff;
+}
+
+.radio label,
+.is-focused .radio label,
+.radio-inline,
+.is-focused .radio-inline,
+.checkbox label,
+.is-focused .checkbox label,
+.checkbox-inline,
+.is-focused .checkbox-inline,
+.switch label,
+.is-focused .switch label {
+    color: inherit;
+}
+
+.form-control,
+.custom-file-control,
+.form-control:focus,
+.form-control:invalid,
+.custom-file-control:invalid,
+.form-control:focus,
+.custom-file-control:focus,
+.bmd-form-group.is-focused .form-control,
+.bmd-form-group.is-focused .custom-file-control,
+.form-control:invalid {
+    box-shadow: none;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    outline: 0;
+}
+
+.checkbox label input[type=checkbox], label.checkbox-inline input[type=checkbox] {
+    position: absolute;
+    z-index: auto;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+    margin-top: 0.2rem;
+}
+
+fieldset[disabled][disabled] .form-control,
+fieldset[disabled][disabled] .custom-file-control,
+.form-control.disabled,
+.disabled.custom-file-control,
+.form-control:disabled,
+.custom-file-control:disabled,
+.form-control[disabled],
+[disabled].custom-file-control,
+.form-control:read-only,
+.custom-file-control:read-only {
+    background-image: none;
+}

@@ -1,0 +1,45 @@
+.native-file-btn {
+    visibility: hidden;
+    width: 1%;
+}
+
+.profile-wrapper {
+    background-color: #ffffff;
+}
+.profile-header {
+    border-bottom: 1px solid #eaeaea;
+    padding: 20px;
+}
+.profile-content {
+    padding: 20px;
+    margin: 20px 0;
+}
+.profile-footer {
+    text-align: right;
+    padding: 20px;
+    border-top: 1px solid #eaeaea;
+}
+
+.image-preview {
+    height: 5rem;
+    margin: 1rem 0;
+}
+
+.image-preview img {
+    height: 100%;
+}
+
+.profile-photo {
+    max-height: 5rem;
+    top: 20px;
+    right: 10px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+.profile-photo-preview {
+    max-height: 3rem;
+    margin: 0;
+    padding: 0;
+}

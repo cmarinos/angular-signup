@@ -1,0 +1,26 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <div class="my-0 mr-md-auto font-weight-normal">
+    <img src="./assets/images/logo_small.png" style="height: 65px">
+  </div>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <button mat-button routerLink="/main">Home</button>
+    <button mat-button [matMenuTriggerFor]="auctions">Auctions</button>
+    <mat-menu #auctions="matMenu">
+      <button mat-menu-item routerLink="/auctions/live-sales">Live Event Auctions</button>
+      <button mat-menu-item routerLink="/auctions/static-sales">Horse-Race Style Auctions</button>
+      <button mat-menu-item>Sales Archive</button>
+    </mat-menu>
+    <button class="p-2" mat-button>Show</button>
+    <button class="p-2" mat-button>Support</button>
+  </nav>
+  <button *ngIf="!isUserAuthenticated" mat-stroked-button color="primary" class="mr-2" routerLink="/login">Login</button>
+  <button *ngIf="!isUserAuthenticated" mat-raised-button color="primary" routerLink="/signup">Register</button>
+
+  <button *ngIf="isUserAuthenticated" mat-stroked-button color="accent" [matMenuTriggerFor]="menu">My Account</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/account">Account</button>
+    <button mat-menu-item (click)="onLogout()">Logout</button>
+  </mat-menu>
+</div>
+
+

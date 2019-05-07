@@ -1,0 +1,39 @@
+<div class="col-sm-5 login-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Please login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+
+        <mat-form-field class="form-control">
+          <input matInput type="email" placeholder="Email" name="email" #emailInput="ngModel" [(ngModel)]="authData.email" required email="true">
+          <mat-error *ngIf="emailInput.invalid">
+            Please enter a valid email.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-control">
+          <input matInput type='password' name="password" #passwordInput="ngModel" [(ngModel)]="authData.password"
+                 placeholder="Password" required>
+          <mat-error *ngIf="passwordInput.invalid">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="form-control">
+          <button type="submit" mat-raised-button color="primary" class="submit-button" [disabled]="!loginForm.form.valid">
+            Login
+          </button>
+        </div>
+
+      </form>
+    </mat-card-content>
+    <mat-card-footer>
+      <p class="forgot-password-link">
+        <a mat-button color="primary" routerLink="/reset-password">Forgot your password?</a>
+      </p>
+    </mat-card-footer>
+
+  </mat-card>
+</div>

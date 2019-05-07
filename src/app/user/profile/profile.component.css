@@ -1,0 +1,19 @@
+.profile-wrapper {
+    background-color: #ffffff;
+}
+.profile-header {
+    border-bottom: 1px solid #eaeaea;
+}
+.profile-content {
+    padding: 20px;
+    margin: 20px 0;
+}
+.profile-footer {
+    text-align: right;
+    padding: 20px;
+    border-top: 1px solid #eaeaea;
+}
+.form-item {
+    margin-bottom: 18px;
+    width: 100%;
+}

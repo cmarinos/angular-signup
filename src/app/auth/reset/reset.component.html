@@ -1,0 +1,24 @@
+<div class="col-sm-5 login-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Please enter your email</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (submit)="resetPassword(resetForm)" #resetForm="ngForm">
+
+        <mat-form-field class="form-control">
+          <input matInput type="email" placeholder="Email" name="email" #emailInput="ngModel" ngModel required email="true">
+          <mat-error *ngIf="emailInput.invalid">
+            Please enter a valid email.
+          </mat-error>
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary" class="col" [disabled]="!resetForm.form.valid">
+          Reset Password
+        </button>
+
+      </form>
+    </mat-card-content>
+
+  </mat-card>
+</div>

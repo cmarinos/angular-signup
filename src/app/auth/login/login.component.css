@@ -1,0 +1,24 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+
+.login-container > * {
+  width: 100%;
+}
+
+.form-control {
+  margin-bottom: 32px;
+}
+
+.forgot-password-link {
+  margin: 20px 0 10px 0;
+  text-align: center;
+}
+
+.submit-button {
+  width: 100%;
+  margin: 10px 0 0 0;
+}

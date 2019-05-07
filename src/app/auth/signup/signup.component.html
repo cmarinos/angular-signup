@@ -1,0 +1,45 @@
+<div class="col-sm-5 signup-container">
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>Register New User</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form (submit)="onSignup(signupForm)" #signupForm="ngForm" appConfirmPassword>
+
+            <mat-form-field class="form-control">
+              <input matInput type='email' email="true" placeholder="Email" name="email" #emailInput="ngModel" [(ngModel)]="formModel.email" required>
+              <mat-error *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+                Please enter a valid email address
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-control">
+              <input matInput type='password' name="password" #passwordInput="ngModel" [(ngModel)]="formModel.password"
+              placeholder="Password" required>
+              <mat-error *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+                Password is <strong>required</strong>.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-control">
+              <input matInput type='password' name="confirmPassword" #confirmPasswordInput="ngModel" [(ngModel)]="formModel.confirmPassword"
+                     placeholder="Confirm password" required>
+              <mat-error *ngIf="confirmPasswordInput.invalid && (confirmPasswordInput.dirty || confirmPasswordInput.touched)">
+                  Confirm password is <strong>required</strong>.
+              </mat-error>
+            </mat-form-field>
+
+            <div class="form-control-error">
+              <mat-error class="mat-small" *ngIf="signupForm.errors?.confirmPassword && (signupForm.touched || signupForm.dirty)">
+                  Passwords must <strong>match</strong>.
+              </mat-error>
+            </div>
+
+            <button type="submit" mat-raised-button color="primary" class="col" [disabled]="!signupForm.form.valid">
+              Register
+            </button>
+          </form>
+        </mat-card-content>
+
+    </mat-card>
+</div>

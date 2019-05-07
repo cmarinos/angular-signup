@@ -1,0 +1,34 @@
+<div class="profile-wrapper">
+        <div class="profile-header"
+             fxLayout="row"
+             fxLayoutAlign="start"
+             fxLayoutGap="20px"
+             fxLayoutGap.xs="10px">
+            <div fxFlex="100">
+                <h3>Account</h3>
+            </div>
+        </div>
+        <div class="profile-content"
+             fxLayout="row"
+             fxLayout.xs="column"
+             fxLayoutAlign="center"
+             fxLayoutGap="20px"
+             fxLayoutGap.xs="10px">
+            <div class="" fxFlex="100">
+
+                <mat-tab-group>
+                    <mat-tab label="Profile">
+                        <app-profile-photo [profile]="userProfile"></app-profile-photo>
+                        <app-profile [profile]="userProfile"></app-profile>
+                    </mat-tab>
+                    <mat-tab label="My Auctions">
+                        <app-user-items></app-user-items>
+                    </mat-tab>
+                    <mat-tab label="Billing">
+
+                    </mat-tab>
+                </mat-tab-group>
+
+            </div>
+        </div>
+</div>
